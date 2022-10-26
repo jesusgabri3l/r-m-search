@@ -1,0 +1,12 @@
+.input{
+    width: 500px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid $GRAY-COLOR;
+    border-radius: $BORDER-RADIUS;
+    padding: 20px;
+    color: $WHITE-COLOR;
+    font-weight: 500;
+    font-size: 18px;
+    @include box-shadow;
+}

@@ -1,0 +1,12 @@
+.app-wrapper{
+    background-color: $BACKGROUND-COLOR;
+}
+.page-wrapper{
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.flex-center{
+    @include flex-center;
+}
+
