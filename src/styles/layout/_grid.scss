@@ -1,4 +1,4 @@
-.items-view {
+.grid {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-gap: 30px;
@@ -7,14 +7,14 @@
         width: 100%;
         margin: 0;
         list-style: none;
-        margin-top: 20px;
+        padding: 20px;
         @media (max-width: $MD-DESKTOP) {
             grid-template-columns: repeat(4, 1fr);
         }
         @media (max-width: $TABLETS) {
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 20px;
-            padding: 20px 0;
+            padding: 20px;
         }
         @media (max-width: $MD-PHONE) {
             grid-template-columns: repeat(2, 1fr);

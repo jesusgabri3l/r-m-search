@@ -9,4 +9,7 @@
     font-weight: 500;
     font-size: 18px;
     @include box-shadow;
+    @media only screen and (max-width: $MD-PHONE) {
+        width: 100%;
+    }
 }

@@ -1,0 +1,66 @@
+.detail{
+    min-height: 40vh;
+    width: 50%;
+    background-color: $ELEMENT-COLOR;
+    border-radius: $BORDER-RADIUS;
+    @include box-shadow;
+    display: flex;
+    @media only screen and (max-width: $MD-DESKTOP) {
+        width: 65%;
+    }
+    @media only screen and (max-width: $TABLETS) {
+        width: 90%;
+    }
+    @media only screen and (max-width: $MD-PHONE) {
+        flex-direction: column;
+        height: 100%;
+    }
+    &__image{
+        border-radius: $BORDER-RADIUS;
+    }
+    &__info{
+        padding: 20px;
+        &__title{
+            font-size: 36px;
+            font-weight: 700;
+            color: $WHITE-COLOR;
+            @media only screen and (max-width: $MD-DESKTOP) {
+                font-size: 32px;
+            }
+            @media only screen and (max-width: $MD-PHONE) {
+                font-size: 28px;
+            }
+        }
+        &__section{
+            display: flex;
+            width: 50%;
+            align-items: center;
+            @media only screen and (max-width: $MD-PHONE) {
+                width: 100%;
+            }
+            &__label{
+                color: $GRAY-COLOR;
+                font-size: 18px;
+                @media only screen and (max-width: $MD-DESKTOP) {
+                    font-size: 15px;
+                }
+                @media only screen and (max-width: $MD-PHONE) {
+                    font-size: 13px;
+                }
+            }
+            &__description{
+                color: $WHITE-COLOR;
+                font-weight: 700;
+                margin-left: 5px;
+                font-size: 18px;
+                @include text-ellipsis;
+                @media only screen and (max-width: $MD-DESKTOP) {
+                    font-size: 16px;
+                }
+                @media only screen and (max-width: $MD-PHONE) {
+                    font-size: 14;
+                }
+            }
+        }
+    }
+}

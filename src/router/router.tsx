@@ -1,8 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import App from '../App';
+import SearchItems from '../modules/characters/characters/SearchItems';
+import CharacterDetail from '../modules/characters/detail/CharacterDetail';
 import HomeView from '../modules/home/HomeView';
-import SearchItems from '../modules/items/SearchItems';
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +15,12 @@ export const router = createBrowserRouter([
         element: <HomeView />,
       },
       {
-        path: '/items',
+        path: 'characters',
         element: <SearchItems />,
+      },
+      {
+        path: 'characters/:id',
+        element: <CharacterDetail />,
       },
     ],
   },
