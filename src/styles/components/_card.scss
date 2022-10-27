@@ -30,6 +30,7 @@
         font-size: 15px;
         width: 100%;
         margin-top: 15px;
+        width: 100%;
         @include text-ellipsis;
     @media only screen and (max-width: $MD-PHONE) {
         font-size: 14px;
@@ -39,6 +40,8 @@
         color: $GRAY-COLOR;
         font-weight: 500;
         font-size: 14px;
+        width: 100%;
+        @include text-ellipsis;
     @media only screen and (max-width: $MD-PHONE) {
         font-size: 13px;
     }

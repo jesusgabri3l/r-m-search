@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import BaseSearchForm from '../../components/base/baseSearchForm/BaseSearchForm';
+
 function HomeView() {
-  const [value, setValue] = useState('');
-  const navigate = useNavigate();
+  const [error, setError] = useState<boolean>(false);
+  //Used in case search input is empty
+  const errorHandler = (payload: boolean) => setError(payload);
   return (
     <main className="home-view">
       <img
@@ -10,24 +13,16 @@ function HomeView() {
         src="https://playbyplaytoys.es/wp-content/uploads/2021/01/rickymorty_bleed.png"
         className="home-view__image"
       />
-      <p className="home-view__text">
+      <strong className="home-view__text">
         Hello there! You can Search for any{' '}
         <span className="text-primary font-bold">Rick & Morty</span> character by name.
-      </p>
-      <form className="flex items-center">
-        <input
-          className="input mt-8"
-          placeholder="Rick Sanchez"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button
-          className="button button--primary"
-          onClick={() => navigate(`/characters?q=${value}`)}
-        >
-          Go
-        </button>
-      </form>
+      </strong>
+      <BaseSearchForm errorHandler={errorHandler} />
+      {error && (
+        <p className="text-red-500 font-bold text-center mt-4">
+          Search input is empty, make sure to write something
+        </p>
+      )}
     </main>
   );
 }

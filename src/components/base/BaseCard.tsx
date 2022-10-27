@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 
-import defaultImage from '../../assets/defaultProfileImage.png';
+import defaultImage from '../../assets/default.png';
 interface Props {
   title?: string;
   description?: string;
   image?: string;
   linkRoute: string;
 }
+//Reusable card component, use it for a grid section
 function BaseCard({ title, description, image, linkRoute }: Props) {
   return (
     <Link className="card" to={linkRoute}>

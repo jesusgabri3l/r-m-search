@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import App from '../App';
-import SearchItems from '../modules/characters/characters/SearchItems';
-import CharacterDetail from '../modules/characters/detail/CharacterDetail';
+import CharacterDetailView from '../modules/characters/detail/CharacterDetailView';
+import CharactersResultView from '../modules/characters/results/CharacterResultView';
 import HomeView from '../modules/home/HomeView';
 
 export const router = createBrowserRouter([
@@ -16,11 +16,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'characters',
-        element: <SearchItems />,
+        element: <CharactersResultView />,
       },
       {
         path: 'characters/:id',
-        element: <CharacterDetail />,
+        element: <CharacterDetailView />,
       },
     ],
   },

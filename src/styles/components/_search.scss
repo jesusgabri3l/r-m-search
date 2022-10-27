@@ -1,0 +1,27 @@
+.search{
+    display: flex;
+    align-items: center;
+    border: 1px solid $GRAY-COLOR;
+    border-radius: $BORDER-RADIUS;
+    margin-top: 30px;
+    &__input{
+        width: 80%;
+        height: 100%;
+        border-radius: $BORDER-RADIUS;
+        background-color: transparent;
+        padding: 15px;
+        color: $WHITE-COLOR;
+        font-weight: 500;
+        font-size: 18px;
+        outline: none;
+    }
+    &__button{
+        text-align: center;
+        background-color: $PRIMARY-COLOR;
+        width: 20%;
+        height: 100%;
+        border-radius: $BORDER-RADIUS;
+        color: $WHITE-COLOR;
+        font-weight: 700;
+    }
+}

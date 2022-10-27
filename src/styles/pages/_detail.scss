@@ -20,6 +20,9 @@
     }
     &__info{
         padding: 20px;
+        @media only screen and (max-width: $MD-PHONE) {
+            padding: 20px;
+        }
         &__title{
             font-size: 36px;
             font-weight: 700;
@@ -40,7 +43,7 @@
             }
             &__label{
                 color: $GRAY-COLOR;
-                font-size: 18px;
+                font-size: 17px;
                 @media only screen and (max-width: $MD-DESKTOP) {
                     font-size: 15px;
                 }
@@ -52,7 +55,7 @@
                 color: $WHITE-COLOR;
                 font-weight: 700;
                 margin-left: 5px;
-                font-size: 18px;
+                font-size: 17px;
                 @include text-ellipsis;
                 @media only screen and (max-width: $MD-DESKTOP) {
                     font-size: 16px;
