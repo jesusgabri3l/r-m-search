@@ -4,7 +4,6 @@ This application allows the user to search by name and see the detail of any cha
 ## Tech
 - [React18](https://reactjs.org/)
 - [React router DOM v6](https://reactrouter.com/en/main)
-- [Typescript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/guide/why.html)
 - [Tailwind](https://tailwindcss.com/)
 - **FULLY RESPONSIVE**
@@ -51,7 +50,7 @@ npm run dev
     - There is a shared folder which contains reusable logic (for fetching character information from api) which is used for both submodules.
 
 ## Services/API instances
-I am using axios, a there is an axios instance pointing to my local backend
+I am using axios, a there is an axios in instance in `src/servicees/api` pointing to my local backend
 - **Local Backend:** It is consuming the [Rick and morty public API](https://rickandmortyapi.com/).
 
 ## Components
