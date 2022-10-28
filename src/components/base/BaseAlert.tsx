@@ -7,15 +7,17 @@ interface Props {
 // Reusable Alert, use it as a Error UI fallback
 function BaseAlert({ title, description, icon, type }: Props) {
   return (
-    <div role="alert" className={` alert alert--${type}`}>
-      <i className={`fas fa-${icon}`} data-testid="alert-icon-test" />
-      <div>
-        <p className="alert__title" data-testid="alert-title-test">
-          {title}
-        </p>
-        <p className="alert__description" data-testid="alert-description-test">
-          {description}
-        </p>
+    <div className="p-8">
+      <div role="alert" className={` alert alert--${type}`}>
+        <i className={`fas fa-${icon}`} data-testid="alert-icon-test" />
+        <div>
+          <p className="alert__title" data-testid="alert-title-test">
+            {title}
+          </p>
+          <p className="alert__description" data-testid="alert-description-test">
+            {description}
+          </p>
+        </div>
       </div>
     </div>
   );

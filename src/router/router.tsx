@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import App from '../App';
+import TheNotFoundView from '../components/layout/TheNotFoundView';
 import CharacterDetailView from '../modules/characters/detail/CharacterDetailView';
 import CharactersResultView from '../modules/characters/results/CharacterResultView';
 import HomeView from '../modules/home/HomeView';
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: 'characters/:id',
         element: <CharacterDetailView />,
+      },
+      {
+        path: '*',
+        element: <TheNotFoundView />,
       },
     ],
   },
