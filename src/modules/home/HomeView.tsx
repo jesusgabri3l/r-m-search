@@ -17,7 +17,7 @@ function HomeView() {
         Hello there! You can search for any{' '}
         <span className="text-primary font-bold">Rick & Morty</span> character by name.
       </strong>
-      <BaseSearchForm errorHandler={errorHandler} />
+      <BaseSearchForm errorHandler={errorHandler} navigateTo="characters" />
       {error && (
         <p
           className="text-red-500 font-bold text-center mt-4"

@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 export const useBaseSearchForm = ({
   errorHandler,
+  navigateTo,
 }: {
   errorHandler: (payload: boolean) => void;
+  navigateTo: string;
 }) => {
   const [value, setValue] = useState<string>('');
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ export const useBaseSearchForm = ({
   const handleSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (missingInput()) return;
-    navigate(`/characters?q=${value}`);
+    navigate(`/${navigateTo}?q=${value}`);
   };
 
   return { value, setValue, handleSubmitSearch };

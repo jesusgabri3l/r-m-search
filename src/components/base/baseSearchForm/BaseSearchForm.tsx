@@ -1,7 +1,16 @@
 import { useBaseSearchForm } from './useBaseSearchForm';
 // Reusable search component, it receives a method which you can use it to handle the empty input
-function BaseSearchForm({ errorHandler }: { errorHandler: (arg0: boolean) => void }) {
-  const { value, setValue, handleSubmitSearch } = useBaseSearchForm({ errorHandler });
+function BaseSearchForm({
+  errorHandler,
+  navigateTo,
+}: {
+  errorHandler: (arg0: boolean) => void;
+  navigateTo: string;
+}) {
+  const { value, setValue, handleSubmitSearch } = useBaseSearchForm({
+    errorHandler,
+    navigateTo,
+  });
   return (
     <form
       className="search"
