@@ -1,13 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const useBaseSearchForm = ({
-  errorHandler,
-  navigateTo,
-}: {
-  errorHandler: (payload: boolean) => void;
-  navigateTo: string;
-}) => {
+import { Props } from './Props';
+
+export const useBaseSearchForm = ({ errorHandler, navigateTo }: Props) => {
   const [value, setValue] = useState<string>('');
   const navigate = useNavigate();
   // To validate if search input is empty

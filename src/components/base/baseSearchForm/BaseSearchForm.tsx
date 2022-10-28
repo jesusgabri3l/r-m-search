@@ -1,12 +1,7 @@
+import { Props } from './Props';
 import { useBaseSearchForm } from './useBaseSearchForm';
 // Reusable search component, it receives a method which you can use it to handle the empty input
-function BaseSearchForm({
-  errorHandler,
-  navigateTo,
-}: {
-  errorHandler: (arg0: boolean) => void;
-  navigateTo: string;
-}) {
+function BaseSearchForm({ errorHandler, navigateTo }: Props) {
   const { value, setValue, handleSubmitSearch } = useBaseSearchForm({
     errorHandler,
     navigateTo,
