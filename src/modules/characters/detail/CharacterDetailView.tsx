@@ -17,17 +17,22 @@ function CharacterDetailView() {
     <main>
       {loading ? (
         <BaseSpinner />
-      ) : !error && (character as Character) ? (
+      ) : !error && character ? (
         <div className="flex-center min-h-screen py-8">
-          <article className="detail">
+          <article className="detail" data-testid="detail-test">
             <img className="detail__image" src={character.image} alt="profile" />
             <section className="detail__info">
-              <h1 className="detail__info__title">{character.name}</h1>
+              <h1 className="detail__info__title" data-testid="detail-title-test">
+                {character.name}
+              </h1>
               <div className="flex justify-between gap-y-8 mt-8 flex-wrap">
                 <CharacterDetailLabel label="Status" description={character.status} />
                 <CharacterDetailLabel label="Species" description={character.species} />
                 <CharacterDetailLabel label="Gender" description={character.gender} />
-                <CharacterDetailLabel label="Origin" description={character.Origin} />
+                <CharacterDetailLabel
+                  label="Origin"
+                  description={character.origin.name}
+                />
               </div>
             </section>
           </article>

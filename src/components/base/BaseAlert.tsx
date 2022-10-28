@@ -21,7 +21,7 @@ function BaseAlert({ title, description, icon, type }: Props) {
   );
 }
 BaseAlert.defaultProps = {
-  title: 'Oops something went wrong',
+  title: 'WOops, something went wrong',
   description: 'Looks like something went wrong, try to reach out the support team.',
   icon: 'warning',
   type: 'error',

@@ -20,7 +20,7 @@ function CharactersResultView() {
       {loading ? (
         <BaseSpinner />
       ) : !error && characters ? (
-        <div className="grid">
+        <div className="grid" data-testid="results-grid-test">
           <CharacterList characters={characters as Character[]} />
         </div>
       ) : (

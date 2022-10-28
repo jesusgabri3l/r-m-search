@@ -10,10 +10,19 @@ interface Props {
 //Reusable card component, use it for a grid section
 function BaseCard({ title, description, image, linkRoute }: Props) {
   return (
-    <Link className="card" to={linkRoute}>
-      <img alt="profile" src={image} className="card__image" />
-      <p className="card__title">{title}</p>
-      <p className="card__description">{description}</p>
+    <Link className="card" to={linkRoute} data-testid="card-test">
+      <img
+        alt="profile"
+        src={image}
+        className="card__image"
+        data-testid="card-image-test"
+      />
+      <p className="card__title" data-testid="card-title-test">
+        {title}
+      </p>
+      <p className="card__description" data-testid="card-description-test">
+        {description}
+      </p>
     </Link>
   );
 }
