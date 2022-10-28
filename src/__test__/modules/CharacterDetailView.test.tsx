@@ -1,15 +1,20 @@
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 import CharacterDetailView from '../../modules/characters/detail/CharacterDetailView';
 
+const renderWithRouter = (id: string) => {
+  render(
+    <MemoryRouter initialEntries={[`/characters/${id}`]}>
+      <Routes>
+        <Route path="characters/:id" element={<CharacterDetailView />}></Route>
+      </Routes>
+    </MemoryRouter>,
+  );
+};
 describe('Testing Character detail View', () => {
   it('Should validate DOM when setting 1 as ID', async () => {
-    render(
-      <MemoryRouter initialEntries={['/characters/1']}>
-        <CharacterDetailView />
-      </MemoryRouter>,
-    );
+    renderWithRouter('1');
     expect(screen.getByTestId('spinner-test')).toBeInTheDocument();
     await waitForElementToBeRemoved(screen.getByTestId('spinner-test'));
     expect(await screen.findByTestId('detail-test')).toBeInTheDocument();
@@ -23,11 +28,7 @@ describe('Testing Character detail View', () => {
   });
 
   it('Should validate alert when sending not existing ID', async () => {
-    render(
-      <MemoryRouter initialEntries={['/characters/13791823']}>
-        <CharacterDetailView />
-      </MemoryRouter>,
-    );
+    renderWithRouter('13791823');
     expect(screen.getByTestId('spinner-test')).toBeInTheDocument();
     await waitForElementToBeRemoved(screen.getByTestId('spinner-test'));
     expect(await screen.findByRole('alert')).toBeInTheDocument();
@@ -35,11 +36,7 @@ describe('Testing Character detail View', () => {
   });
 
   it('Should validate alert when sending not an number as ID', async () => {
-    render(
-      <MemoryRouter initialEntries={['/characters/test']}>
-        <CharacterDetailView />
-      </MemoryRouter>,
-    );
+    renderWithRouter('test');
     expect(screen.getByTestId('spinner-test')).toBeInTheDocument();
     await waitForElementToBeRemoved(screen.getByTestId('spinner-test'));
     expect(await screen.findByRole('alert')).toBeInTheDocument();

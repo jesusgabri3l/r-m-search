@@ -8,7 +8,7 @@ import detailCharacterMock from './mocks/detailCharacterMock';
 import searchCharacterMock from './mocks/searchCharacterMock';
 
 const apiURL: string = import.meta.env.VITE_API_URL as string;
-
+// 13791823
 export const restHandlers = [
   rest.get(`${apiURL}characters/:id`, (req, res, ctx) => {
     const { id } = req.params;
