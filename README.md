@@ -50,7 +50,7 @@ npm run dev
     - There is a shared folder which contains reusable logic (for fetching character information from api) which is used for both submodules.
 
 ## Services/API instances
-I am using axios, a there is an axios in instance in `src/servicees/api` pointing to my local backend
+I am using axios, there is an axios instance in `src/servicees/api` pointing to my local backend
 - **Local Backend:** It is consuming the [Rick and morty public API](https://rickandmortyapi.com/).
 
 ## Components
